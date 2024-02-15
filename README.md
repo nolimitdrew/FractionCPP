@@ -38,6 +38,8 @@ The provided C++ code defines a Fraction class with a default constructor, input
 **DIRECTORY STRUCTURE:**  
   
 ├── .vscode  
+│   ├── c_cpp_properties.json  
+│   ├── launch.json  
 │   ├── settings.json  
 ├── src  
 │   ├── frac.h  
