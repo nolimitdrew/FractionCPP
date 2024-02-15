@@ -36,7 +36,7 @@ The provided C++ code defines a Fraction class with a default constructor, input
 - The program ends with a "Goodbye!" message.
 
 **DIRECTORY STRUCTURE:**  
-  
+
 ├── .vscode  
 │   ├── c_cpp_properties.json  
 │   ├── launch.json  
