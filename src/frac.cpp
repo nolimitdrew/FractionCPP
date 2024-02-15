@@ -1,11 +1,8 @@
 //--------------- FRAC.CPP ---------------
 // The class definition for fractions.
-//
 
 #include <iostream>
 #include "frac.h"
-
-using namespace std;
 
 Fraction::Fraction()
 // Default constructor.  Initializes fraction to 0/1
@@ -19,21 +16,26 @@ Fraction::Fraction(int n, int d)
 // what kind of error checking should be added?
 {
    numerator = n;
-   denominator = d;
+   denominator = (d != 0) ? d : 1;    // Handle division by zero by setting denominator to 1.
 }
 
 void Fraction::Input()
 // Get a fraction from standard input, in the form "numerator/denominator."
 // what kind of error checking should be added?
 {
-    char divSign; 
-    cin >> numerator >> divSign >> denominator;
+    char divSign;
+    std::cin >> numerator >> divSign >> denominator;
+    if (denominator == 0)
+    {
+        std::cout << "Error: Denominator cannot be zero. Setting denominator to 1.\n";
+        denominator = 1;
+    }
 }
 
 void Fraction::Show() const
 // Display a fraction, in the form "numerator/denominator."
 {
-   cout << numerator << '/' << denominator;
+   std::cout << numerator << '/' << denominator;
 }
 
 int Fraction::GetNumerator() const
@@ -47,17 +49,14 @@ int Fraction::GetDenominator() const
 }
 
 void Fraction::SetValue(int n, int d)
-// what sort of error checking should be added?
 {
-      numerator = n;
-      denominator = d;
+    numerator = n;
+    denominator = (d != 0) ? d : 1;    // Handle division by zero by setting denominator to 1.
 }
 
-
 double Fraction::Evaluate() const
-// Calculates and returns the decimal value of a fraction
 {
-   double n = numerator;	// convert numerator to double
-   double d = denominator;	// convert denominator to double
-   return (n / d);		// compute and return float representation
+   double n = static_cast<double>(numerator);
+   double d = static_cast<double>(denominator);
+   return (d != 0.0) ? (n / d) : 0.0;  // Handle division by zero by returning 0.0.
 }
