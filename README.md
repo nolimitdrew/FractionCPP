@@ -46,4 +46,4 @@ The provided C++ code defines a Fraction class with a default constructor, input
 │   ├── frac.cpp  
 │   ├── main.cpp  
 ├── LICENSE  
-└── README.md 
+└── README.md  
