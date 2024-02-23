@@ -47,3 +47,6 @@ The provided C++ code defines a Fraction class with a default constructor, input
 │   ├── main.cpp  
 ├── LICENSE  
 └── README.md  
+
+
+© Andrew Stade 2024. All rights reserved.
